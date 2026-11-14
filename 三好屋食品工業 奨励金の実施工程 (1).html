@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三好屋食品工業 奨励金の実施工程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* 配色：藍（Bコース①）・若竹（Cコース）・山吹（期限・注意）／縦一列の報告書レイアウト、各章は「図→表」の順 */
+:root{
+  --bg:#f6f7f9;
+  --paper:#ffffff;
+  --ink:#1c2430;
+  --muted:#5a6575;
+  --line:#d9dee6;
+  --b:#2f4f8f;
+  --b-soft:#e6ecf7;
+  --c:#2f7a5b;
+  --c-soft:#e3f2eb;
+  --warn:#b7791f;
+  --warn-soft:#fbf1df;
+  --font-display:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --font-body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12161c;--paper:#1a2029;--ink:#e6eaf0;--muted:#9aa5b4;--line:#2e3744;
+    --b:#8fb0ec;--b-soft:#1f2b42;--c:#7fcaa8;--c-soft:#18302a;--warn:#e6b45c;--warn-soft:#33281a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12161c;--paper:#1a2029;--ink:#e6eaf0;--muted:#9aa5b4;--line:#2e3744;
+  --b:#8fb0ec;--b-soft:#1f2b42;--c:#7fcaa8;--c-soft:#18302a;--warn:#e6b45c;--warn-soft:#33281a;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.75}
+.wrap{max-width:980px;margin:0 auto;padding:32px 20px 64px;display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:6px;border-bottom:3px solid var(--ink);padding-bottom:16px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.05em}
+h1{font-family:var(--font-display);font-size:28px;line-height:1.4;margin:0;text-wrap:balance}
+h2{font-family:var(--font-display);font-size:20px;margin:0 0 12px;text-wrap:balance;display:flex;gap:10px;align-items:baseline}
+h2 .no{font-family:var(--font-body);font-size:13px;color:var(--muted);font-weight:500}
+h3{font-size:16px;margin:0 0 8px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:22px 22px}
+p{margin:0 0 10px;max-width:68ch}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:10px}
+.meta div{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px 12px}
+.meta dt{font-size:12px;color:var(--muted)}
+.meta dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}
+.chart{overflow-x:auto}
+.chart svg{display:block;min-width:720px;width:100%;height:auto}
+.chart text{fill:var(--ink);font-family:var(--font-body)}
+.chart .muted{fill:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted);margin-top:6px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--sw)}
+.flows{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.flows{grid-template-columns:1fr}}
+.flow{display:flex;flex-direction:column;gap:0}
+.flow-head{border-radius:6px 6px 0 0;padding:8px 12px;color:#fff;font-weight:700;display:flex;justify-content:space-between;gap:8px}
+.flow.b .flow-head{background:var(--b)} .flow.c .flow-head{background:var(--c)}
+:root[data-theme="dark"] .flow-head{color:#12161c}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .flow-head{color:#12161c}}
+.step{position:relative;border:1px solid var(--line);border-top:none;padding:10px 12px 10px 52px;background:var(--paper)}
+.flow.b .step{border-left:4px solid var(--b)} .flow.c .step{border-left:4px solid var(--c)}
+.step .n{position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;font-variant-numeric:tabular-nums}
+.flow.b .n{background:var(--b-soft);color:var(--b)} .flow.c .n{background:var(--c-soft);color:var(--c)}
+.step .t{font-weight:700}
+.step .d{font-size:13.5px;color:var(--muted);line-height:1.65}
+.step .req{display:inline-block;margin-top:4px;font-size:12px;font-weight:700;color:var(--warn);background:var(--warn-soft);border-radius:4px;padding:1px 8px}
+.step.add{border-style:dashed;border-top:1px dashed var(--line)}
+.step:last-child{border-radius:0 0 6px 6px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+.tbl{overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg);font-weight:700;white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:1px 9px;white-space:nowrap}
+.pill.b{background:var(--b-soft);color:var(--b)} .pill.c{background:var(--c-soft);color:var(--c)} .pill.x{background:var(--warn-soft);color:var(--warn)}
+.note{border-left:4px solid var(--warn);background:var(--warn-soft);padding:10px 14px;border-radius:0 6px 6px 0;font-size:14px}
+ul.plain{margin:0;padding-left:1.2em}
+ul.plain li{margin:2px 0}
+footer{font-size:12.5px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+footer a{color:var(--b)}
+a:focus-visible{outline:2px solid var(--b);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">東京都働きやすい職場環境づくり推進奨励金（令和８年度・第３回）</div>
+  <h1>株式会社三好屋食品工業　交付決定後に行う取組と実績報告までの工程</h1>
+  <dl class="meta">
+    <div><dt>交付決定日（事業開始日）</dt><dd>令和８年10月10日</dd></div>
+    <div><dt>事業実施期間</dt><dd>令和８年10月10日〜令和９年１月９日</dd></div>
+    <div><dt>実績報告の提出期限</dt><dd>令和９年１月20日（消印有効）</dd></div>
+    <div><dt>交付申請額</dt><dd>1,000,000円</dd></div>
+  </dl>
+</header>
+
+<section aria-labelledby="s1">
+  <h2 id="s1"><span class="no">1</span>全体の日程</h2>
+  <p>取組はすべて事業実施期間内に、手引きに定められた順番で行います。事業実施期間（３か月）は延長できません。</p>
+  <div class="chart" role="img" aria-label="令和8年10月10日から令和9年1月20日までの日程図。事業実施期間は1月9日まで、実績報告期限は1月20日。">
+    <svg viewBox="0 0 960 190" xmlns="http://www.w3.org/2000/svg">
+      <!-- 1日 = 8.4px、起点x=40（10/10）、102日で x=896.8（1/20） -->
+      <g stroke="var(--line)" stroke-width="1">
+        <line x1="40" y1="40" x2="40" y2="160"/>
+        <line x1="224.8" y1="40" x2="224.8" y2="160"/>
+        <line x1="476.8" y1="40" x2="476.8" y2="160"/>
+        <line x1="737.2" y1="40" x2="737.2" y2="160"/>
+      </g>
+      <g font-size="13" class="muted">
+        <text x="44" y="32" class="muted">10月</text>
+        <text x="229" y="32" class="muted">11月</text>
+        <text x="481" y="32" class="muted">12月</text>
+        <text x="741" y="32" class="muted">令和９年１月</text>
+      </g>
+      <rect x="40" y="58" width="764.4" height="34" rx="4" fill="var(--b-soft)" stroke="var(--b)"/>
+      <text x="52" y="80" font-size="14" font-weight="700">事業実施期間（10/10〜1/9）：Bコース①・Cコース・体験型研修のすべての取組</text>
+      <rect x="804.4" y="58" width="92.4" height="34" rx="4" fill="var(--warn-soft)" stroke="var(--warn)"/>
+      <text x="811" y="80" font-size="13" font-weight="700">実績報告</text>
+      <g>
+        <line x1="334" y1="48" x2="334" y2="112" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="334" y="128" font-size="13" text-anchor="middle" font-weight="700">本日 11/14</text>
+        <text x="334" y="145" font-size="12" text-anchor="middle" class="muted">開始から36日目</text>
+      </g>
+      <g font-size="12" class="muted">
+        <text x="40" y="128" text-anchor="start">10/10 開始</text>
+        <text x="804.4" y="128" text-anchor="end">1/9 期間末日</text>
+        <text x="896.8" y="145" text-anchor="end">1/20 報告期限</text>
+      </g>
+      <line x1="804.4" y1="92" x2="804.4" y2="114" stroke="var(--b)" stroke-width="2"/>
+      <line x1="896.8" y1="92" x2="896.8" y2="132" stroke="var(--warn)" stroke-width="2"/>
+      <text x="40" y="180" font-size="12" class="muted">事業実施期間 92日間（10/10〜1/9）のうち、本日（11/14）は36日目、残りは56日（11/15〜1/9）</text>
+    </svg>
+  </div>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2"><span class="no">2</span>コースごとの取組の順番</h2>
+  <p>番号の順に進めます。研修会（都主催）の受講は、社内研修より前に済ませます。Bコース①とCコースの社内研修は、説明する内容と使う様式がコースごとに決まっているため、別々に行います。</p>
+  <div class="flows">
+    <div class="flow b">
+      <div class="flow-head"><span>Bコース①　介護と仕事の両立推進事業</span><span>40万円</span></div>
+      <div class="step"><span class="n">1</span><div class="t">ニーズ調査（アンケート）</div><div class="d">都の様式で、都内勤務の全従業員（パート・アルバイトを含む）に実施し、集計する。</div><span class="req">回収率８割以上</span></div>
+      <div class="step"><span class="n">2</span><div class="t">プロジェクトチームでの検討・取組計画の策定</div><div class="d">都内勤務の従業員１名以上を含む２名以上でチームを設置し、調査結果を分析して計画（１〜２年程度）を策定する。</div></div>
+      <div class="step"><span class="n">3</span><div class="t">研修会（Bテーマ）の受講</div><div class="d">介護相談窓口の社内担当者（役員可）（育児・介護休業規程第29条の総務課）が、社内研修より前に受講し、受講証明書を取得する。</div></div>
+      <div class="step"><span class="n">4</span><div class="t">社内研修</div><div class="d">調査結果・検討状況・取組計画と、介護に関する社内制度や公的介護保険制度を、都の様式で説明する。写真撮影と欠席者への周知も行う。</div><span class="req">都内勤務の全従業員の５割以上が出席</span></div>
+      <div class="step"><span class="n">5</span><div class="t">計画等の社外発信</div><div class="d">都ホームページ掲載用の様式（Wordデータ）を、実績報告の期限までに都の指定メールアドレスへ送付する。</div></div>
+      <div class="step add"><span class="n">6</span><div class="t">（追加取組）経営者・管理職への体験型研修　20万円</div><div class="d">経営者・管理職の全員を対象に、１週間以上（非稼働日を含む場合は稼働日５日以上）の体験期間を設け、１人１回以上実施する。対象者が３名に満たない場合は管理職候補等を加えて３名以上とし、少なくとも３名が定めた内容をすべて実施する。研修の実施目的・対象者・実施方法（毎年１回以上、全対象者に実施）を就業規則等に新たに定め、振り返りレポートを作成する。</div><span class="req">事後アンケート回収率８割以上</span></div>
+    </div>
+    <div class="flow c">
+      <div class="flow-head"><span>Cコース　病気治療と仕事の両立推進</span><span>40万円</span></div>
+      <div class="step"><span class="n">1</span><div class="t">相談窓口の設置</div><div class="d">病気治療と仕事の両立相談員を配置する。相談員は経営者・役員または従業員（人事労務担当者等）で、常時相談に対応できる方。一部業務の外部委託はできるが、社外の方（社外取締役・派遣・業務委託等）だけを任命すると奨励対象外。</div></div>
+      <div class="step"><span class="n">2</span><div class="t">基本方針・社内ルールの策定</div><div class="d">基本方針を新たに策定し、社内ルールを作成する。社内ルールには、健康相談窓口の案内、休暇・勤務制度、申出の手順と関係者の役割、情報の取扱いを入れる。</div></div>
+      <div class="step"><span class="n">3</span><div class="t">研修会（Cテーマ）の受講</div><div class="d">1で配置した両立相談員（役員可）本人が受講し、受講証明書を取得する。</div></div>
+      <div class="step"><span class="n">4</span><div class="t">両立支援制度の整備</div><div class="d">①病気治療休暇 ②短時間勤務 ③フレックスタイム ④時差出勤 ⑤病気治療経費補助のいずれか１つを新たに整備する。疾病名は具体的に複数挙げ、期限付きの制度にはしない。休暇の場合は１人１年５日以上。交付申請時の資料では①病気治療休暇（無給・年５日）を案としている。</div></div>
+      <div class="step"><span class="n">5</span><div class="t">社内研修</div><div class="d">相談窓口・基本方針・社内ルール・整備した制度を都の様式で説明する。基本方針と社内ルールは研修資料に添付する。写真撮影と欠席者への資料配布等による周知も行う。</div><span class="req">都内勤務の全従業員の５割以上が出席</span></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="sk">
+  <h2 id="sk"><span class="no">3</span>都の研修会の申込方法と日程</h2>
+  <p>研修会は会場で行うものではなく、月ごとに配信される動画（オンデマンド）を視聴する形式です。参加費は無料です。Bテーマ（介護と仕事の両立）とCテーマ（病気治療と仕事の両立）は別々の研修です。</p>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>項目</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>申込先</td><td>研修会の申込サイト　https://www.tokyo-hkensyu.metro.tokyo.lg.jp/</td></tr>
+      <tr><td>申込の人数</td><td>１社につき２名まで。申込画面から１名ずつ申し込み、申込後に受講するテーマを登録する。</td></tr>
+      <tr><td>受講する人</td><td><span class="pill b">Bテーマ</span> 介護相談窓口の社内担当者（役員可）本人　<span class="pill c">Cテーマ</span> 両立相談員（役員可）本人。代理の方が受講した場合は奨励対象外。</td></tr>
+      <tr><td>受付・配信の時間</td><td>申込は各申込期間の初日9:00〜最終日17:00。配信は各配信期間の初日0:00〜最終日23:59。期間外は申込・視聴ともできない。</td></tr>
+      <tr><td>受講証明書</td><td>動画の視聴後、確認テストとアンケートに回答するとダウンロードできる。回答は各配信月の配信最終日23:59まで。</td></tr>
+      <tr><td>問合せ先</td><td>働きやすい職場環境づくり推進事業研修会事務局（株式会社ネットラーニング）　電話 03-5338-3011／メール nl_tokyo_hkensyu@nl-hd.com（平日9:00〜17:00）</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3 style="margin-top:16px">事業実施期間（1/9まで）に受講できる配信月</h3>
+  <div class="chart" role="img" aria-label="研修会の日程図。12月配信分は申込11月24日から12月28日、配信12月1日から28日。1月配信分は申込12月21日から1月29日、配信1月4日から29日。事業実施期間の末日は1月9日。">
+    <svg viewBox="0 0 960 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- 起点x=40を11/20とし、1日=11px。11/20〜1/31の73日 -->
+      <g stroke="var(--line)">
+        <line x1="161" y1="30" x2="161" y2="160"/>
+        <line x1="502" y1="30" x2="502" y2="160"/>
+      </g>
+      <g font-size="13" class="muted">
+        <text x="44" y="22" class="muted">11月</text>
+        <text x="165" y="22" class="muted">12月</text>
+        <text x="506" y="22" class="muted">令和９年１月</text>
+      </g>
+      <text x="40" y="58" font-size="13" font-weight="700">12月配信分</text>
+      <rect x="84" y="62" width="385" height="10" rx="2" fill="var(--warn-soft)" stroke="var(--warn)"/>
+      <text x="130" y="58" font-size="12" class="muted">申込 11/24〜12/28（細い帯）／配信 12/1〜12/28</text>
+      <rect x="161" y="74" width="308" height="24" rx="3" fill="var(--b-soft)" stroke="var(--b)"/>
+      <text x="315" y="91" font-size="12" text-anchor="middle" font-weight="700">配信 12/1〜12/28</text>
+
+      <text x="40" y="118" font-size="13" font-weight="700">1月配信分</text>
+      <rect x="381" y="122" width="440" height="10" rx="2" fill="var(--warn-soft)" stroke="var(--warn)"/>
+      <text x="130" y="118" font-size="12" class="muted">申込 12/21〜1/29（細い帯）／配信 1/4〜1/29</text>
+      <rect x="535" y="134" width="286" height="24" rx="3" fill="var(--b-soft)" stroke="var(--b)" stroke-dasharray="4 3"/>
+      <text x="678" y="151" font-size="12" text-anchor="middle" font-weight="700">配信 1/4〜1/29</text>
+
+      <line x1="601" y1="34" x2="601" y2="170" stroke="var(--ink)" stroke-width="2"/>
+      <text x="606" y="186" font-size="12" font-weight="700">1/9 事業実施期間の末日</text>
+    </svg>
+  </div>
+  <ul class="plain" style="margin-top:8px">
+    <li>研修会の受講は、事業実施期間内で、かつ社内研修より前に済ませる。</li>
+    <li>申込期間は、各配信月の配信最終日まで（12月配信分：11/24（火）〜12/28（月）、1月配信分：12/21（月）〜1/29（金））。ただし事業実施期間内に受講を終え、その後に社内研修を行う必要がある。</li>
+    <li>1月配信分を受講する場合、受講から社内研修までを1/4〜1/9の間に行うことになる。</li>
+    <li>上の日程は都の研修会チラシから取り出したもの。申込の前に、申込サイトで当該月の申込期間を確かめる。</li>
+  </ul>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3"><span class="no">4</span>数値で決まっている要件</h2>
+  <p>下の基準を一つでも下回ると、そのコース・取組は奨励対象外になります。</p>
+  <div class="chart" role="img" aria-label="要件の基準値。Bコース①アンケート回収率80%以上、Bコース①社内研修出席率50%以上、Cコース社内研修出席率50%以上、体験型研修事後アンケート回収率80%以上。">
+    <svg viewBox="0 0 960 250" xmlns="http://www.w3.org/2000/svg">
+      <!-- 0%=x300, 100%=x900（1% = 6px） -->
+      <g stroke="var(--line)">
+        <line x1="300" y1="20" x2="300" y2="215"/>
+        <line x1="450" y1="20" x2="450" y2="215" stroke-dasharray="2 3"/>
+        <line x1="600" y1="20" x2="600" y2="215" stroke-dasharray="2 3"/>
+        <line x1="750" y1="20" x2="750" y2="215" stroke-dasharray="2 3"/>
+        <line x1="900" y1="20" x2="900" y2="215"/>
+      </g>
+      <g font-size="12" class="muted" text-anchor="middle">
+        <text x="300" y="235" class="muted">0%</text>
+        <text x="450" y="235" class="muted">25%</text>
+        <text x="600" y="235" class="muted">50%</text>
+        <text x="750" y="235" class="muted">75%</text>
+        <text x="900" y="235" class="muted">100%</text>
+      </g>
+      <g font-size="14">
+        <text x="290" y="50" text-anchor="end">Bコース①　ニーズ調査の回収率</text>
+        <rect x="300" y="32" width="480" height="28" rx="3" fill="var(--b)"/>
+        <text x="790" y="51" font-weight="700">80%以上</text>
+
+        <text x="290" y="100" text-anchor="end">Bコース①　社内研修の出席率</text>
+        <rect x="300" y="82" width="300" height="28" rx="3" fill="var(--b)"/>
+        <text x="610" y="101" font-weight="700">50%以上</text>
+
+        <text x="290" y="150" text-anchor="end">Cコース　社内研修の出席率</text>
+        <rect x="300" y="132" width="300" height="28" rx="3" fill="var(--c)"/>
+        <text x="610" y="151" font-weight="700">50%以上</text>
+
+        <text x="290" y="200" text-anchor="end">体験型研修　事後アンケート回収率</text>
+        <rect x="300" y="182" width="480" height="28" rx="3" fill="var(--b)" fill-opacity="0.55"/>
+        <text x="790" y="201" font-weight="700">80%以上</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend"><span style="--sw:var(--b)">Bコース①</span><span style="--sw:var(--c)">Cコース</span><span style="--sw:color-mix(in srgb,var(--b) 55%,transparent)">体験型研修（Bコース①の追加取組）</span></div>
+  <p style="margin-top:10px">社内研修の出席率とニーズ調査の回収率は、都内勤務の全従業員（パート・アルバイトを含む）が分母です。</p>
+</section>
+
+<section aria-labelledby="s4">
+  <h2 id="s4"><span class="no">5</span>奨励金額の内訳</h2>
+  <div class="chart" role="img" aria-label="奨励金額の内訳。Bコース①40万円、Cコース40万円、体験型研修20万円、合計100万円で上限額。">
+    <svg viewBox="0 0 960 110" xmlns="http://www.w3.org/2000/svg">
+      <!-- 100万円 = 880px -->
+      <rect x="40" y="20" width="352" height="40" fill="var(--b)"/>
+      <rect x="392" y="20" width="352" height="40" fill="var(--c)"/>
+      <rect x="744" y="20" width="176" height="40" fill="var(--b)" fill-opacity="0.55"/>
+      <g font-size="14" font-weight="700" fill="#ffffff">
+        <text x="56" y="46" fill="#ffffff">Bコース①　400,000円</text>
+        <text x="408" y="46" fill="#ffffff">Cコース　400,000円</text>
+        <text x="756" y="46" fill="#ffffff">体験型研修　200,000円</text>
+      </g>
+      <text x="40" y="92" font-size="13" class="muted">合計 1,000,000円（本奨励金の上限額）。実績報告の審査により、交付決定額から減額される場合があります。</text>
+    </svg>
+  </div>
+</section>
+
+<section aria-labelledby="s5">
+  <h2 id="s5"><span class="no">6</span>就業規則の改定と届出</h2>
+  <p>Cコースの両立支援制度と、体験型研修の規定を就業規則等に新しく定め、実績報告日までに亀戸労働基準監督署へ届け出ます。</p>
+  <ul class="plain">
+    <li>前回の施行日（令和８年８月１日）は削除せずに残し、改定後の施行日を書き足します。</li>
+    <li>実績報告には、改定後の全文（改定部分に下線）と新旧対照表を添付します。</li>
+    <li>交付決定日より前に遡って改正した場合は、奨励対象外となる場合があります。</li>
+  </ul>
+</section>
+
+<section aria-labelledby="s6">
+  <h2 id="s6"><span class="no">7</span>実績報告の提出書類（令和９年１月20日 消印有効）</h2>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>区分</th><th>書類</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill x">共通</span></td><td>実績報告時提出チェックリスト／実績報告書（様式第６号）／社内研修資料／社内研修の写真（コース・事業ごと）／社内研修受講者等名簿／事業所一覧／事業所一覧（別紙 実績報告時提出用：交付申請時から都内の従業員数に変動がある場合）／出勤簿（交付申請時の２名分）／委任状（実績報告以前に提出済みの場合は不要）</td></tr>
+      <tr><td><span class="pill b">Bコース①</span></td><td>研修会の受講証明書（写し）／介護アンケート集計結果／社外発信用資料／体験型研修の関係書類（事後アンケート・振り返りレポート等）</td></tr>
+      <tr><td><span class="pill c">Cコース</span></td><td>研修会の受講証明書（原本）／就業規則等（改定後の全文・新旧対照表・労働基準監督署への届出が確認できる書類）</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section aria-labelledby="s7">
+  <h2 id="s7"><span class="no">8</span>実績報告後の流れ</h2>
+  <div class="chart" role="img" aria-label="実績報告書の提出、都の審査、確定通知書等の受領、請求書と口座振替依頼書の返送、概ね2から3週間で振込の順。">
+    <svg viewBox="0 0 960 120" xmlns="http://www.w3.org/2000/svg">
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker></defs>
+      <g font-size="13">
+        <rect x="10" y="20" width="160" height="62" rx="6" fill="var(--warn-soft)" stroke="var(--warn)"/>
+        <text x="90" y="46" text-anchor="middle" font-weight="700">実績報告書の提出</text>
+        <text x="90" y="66" text-anchor="middle" class="muted">1/20 消印有効</text>
+
+        <rect x="200" y="20" width="160" height="62" rx="6" fill="var(--paper)" stroke="var(--line)"/>
+        <text x="280" y="46" text-anchor="middle" font-weight="700">都の審査</text>
+        <text x="280" y="66" text-anchor="middle" class="muted">交付額の決定</text>
+
+        <rect x="390" y="20" width="180" height="62" rx="6" fill="var(--paper)" stroke="var(--line)"/>
+        <text x="480" y="42" text-anchor="middle" font-weight="700">都から書類が届く</text>
+        <text x="480" y="60" text-anchor="middle" class="muted" font-size="12">奨励額確定通知書・奨励金請求書</text>
+        <text x="480" y="75" text-anchor="middle" class="muted" font-size="12">支払金口座振替依頼書</text>
+
+        <rect x="600" y="20" width="170" height="62" rx="6" fill="var(--paper)" stroke="var(--line)"/>
+        <text x="685" y="46" text-anchor="middle" font-weight="700">記入・押印して返送</text>
+        <text x="685" y="66" text-anchor="middle" class="muted" font-size="12">請求書・口座振替依頼書</text>
+
+        <rect x="800" y="20" width="150" height="62" rx="6" fill="var(--paper)" stroke="var(--line)"/>
+        <text x="875" y="46" text-anchor="middle" font-weight="700">振込</text>
+        <text x="875" y="66" text-anchor="middle" class="muted" font-size="12">受領から概ね２〜３週間</text>
+      </g>
+      <g stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar)">
+        <line x1="172" y1="51" x2="197" y2="51"/>
+        <line x1="362" y1="51" x2="387" y2="51"/>
+        <line x1="572" y1="51" x2="597" y2="51"/>
+        <line x1="772" y1="51" x2="797" y2="51"/>
+      </g>
+      <text x="10" y="108" font-size="12" class="muted">振込の連絡はないため、入金は通帳で確認します。</text>
+    </svg>
+  </div>
+</section>
+
+<section aria-labelledby="s8">
+  <h2 id="s8"><span class="no">9</span>事業実施期間中に決める事項</h2>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>事項</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>Cコース 両立相談員の人選</td><td>経営者・役員または従業員（人事労務担当者等）のうち、常時対応できる方を社内から選ぶ。この方が研修会（Cテーマ）を受講する。</td></tr>
+      <tr><td>Cコース 整備する制度</td><td>①〜⑤から１つ。①病気治療休暇を選ぶ場合、生理休暇の規定（就業規則第44条）が「私傷病による休暇の規定」に当たらない扱いでよいかを、事務局（労働相談情報センター亀戸事務所）に確認する。私傷病による休暇の規定がある場合は①を選べないため。</td></tr>
+      <tr><td>社内研修の日程</td><td>Bコース①・Cコースそれぞれについて、都内勤務の全従業員の５割以上が出席できる日を、事業実施期間内（1/9まで）で決める。</td></tr>
+      <tr><td>体験型研修の実施期間</td><td>経営者・管理職の全員が参加できる１週間以上の期間を、事業実施期間内で決める。</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note" style="margin-top:12px">実績報告書類は、提出期限後の追加提出と差替えが原則できません（提出先から求められた場合を除く）。追加提出を求められて応じない場合は奨励対象外になります。研修会の受講証明書はダウンロード期間を過ぎると再発行されないため、受講後すぐに取得します。</p>
+</section>
+
+<footer>
+  <div>作成：社会保険労務士法人キャリアデザイン　社会保険労務士 杉山史和（令和８年11月14日）</div>
+  <div>出典：<a href="https://www.hataraku.metro.tokyo.lg.jp/kaizen/koyoukankyo/R8tebiki_1.pdf">東京都働きやすい職場環境づくり推進奨励金 令和８年度版 申請の手引き</a>（Bコース①：P33〜36／体験型研修：P52〜53／Cコース：P44〜49／実績報告：P62〜68／社内研修・写真：P56〜57／研修会：P54〜56／交付額の決定・請求：P69〜70／規程の改正：P13・P17・P21・P59）、<a href="https://www.hataraku.metro.tokyo.lg.jp/kaizen/koyoukankyo/kenshutirashi_1.pdf">「働きやすい職場環境づくり推進事業」研修会チラシ</a>、<a href="https://www.hataraku.metro.tokyo.lg.jp/kaizen/koyoukankyo/QA0728_1.pdf">よくある質問（令和８年７月28日現在）No.103・105〜107</a>、交付申請書類記載内容一式（令和８年８月作成）</div>
+</footer>
+
+</div>
+</body>
+</html>
